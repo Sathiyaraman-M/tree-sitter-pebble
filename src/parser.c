@@ -213,6 +213,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (lookahead == '}') ADVANCE(14);
       if (('\t' <= lookahead && lookahead <= '\r') ||
           lookahead == ' ') SKIP(0);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(20);
       END_STATE();
     case 1:
       if (lookahead == 'a') ADVANCE(6);
@@ -311,7 +312,7 @@ static const TSLexerMode ts_lex_modes[STATE_COUNT] = {
   [17] = {.lex_state = 0},
   [18] = {.lex_state = 0},
   [19] = {.lex_state = 0},
-  [20] = {.lex_state = 20},
+  [20] = {.lex_state = 0},
   [21] = {.lex_state = 0},
 };
 
@@ -325,6 +326,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_SEMI] = ACTIONS(1),
     [anon_sym_repeat] = ACTIONS(1),
     [anon_sym_DQUOTE] = ACTIONS(1),
+    [sym_count] = ACTIONS(1),
   },
   [STATE(1)] = {
     [sym_source_file] = STATE(12),
