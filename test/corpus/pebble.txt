@@ -8,9 +8,9 @@ plan dummy {
 
 --------------------------------------------------------------------------------
 (source_file
-  (plan (text)
-    (do (quoted_text))
-    (do (quoted_text))
+  (plan (identifier)
+    (do (string))
+    (do (string))
   )
 )
 
@@ -27,9 +27,9 @@ plan dummy {
 
 --------------------------------------------------------------------------------
 (source_file
-  (plan (text)
-    (do (quoted_text))
-    (do (quoted_text))
-    (repeat (count) (do (quoted_text)))
+  (plan (identifier)
+    (do (string))
+    (do (string))
+    (repeat (count) (do (string)))
   )
 )

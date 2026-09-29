@@ -8,7 +8,7 @@
         "required": true,
         "types": [
           {
-            "type": "quoted_text",
+            "type": "string",
             "named": true
           }
         ]
@@ -19,12 +19,12 @@
     "type": "plan",
     "named": true,
     "fields": {
-      "title": {
+      "name": {
         "multiple": false,
         "required": true,
         "types": [
           {
-            "type": "text",
+            "type": "identifier",
             "named": true
           }
         ]
@@ -44,11 +44,6 @@
         }
       ]
     }
-  },
-  {
-    "type": "quoted_text",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "repeat",
@@ -97,15 +92,6 @@
     }
   },
   {
-    "type": "text",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "\"",
-    "named": false
-  },
-  {
     "type": "count",
     "named": true
   },
@@ -114,12 +100,20 @@
     "named": false
   },
   {
+    "type": "identifier",
+    "named": true
+  },
+  {
     "type": "plan",
     "named": false
   },
   {
     "type": "repeat",
     "named": false
+  },
+  {
+    "type": "string",
+    "named": true
   },
   {
     "type": "{",

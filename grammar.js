@@ -12,11 +12,11 @@ export default grammar({
 
   rules: {
     source_file: $ => seq($.plan),
-    plan: $ => seq("plan", field("title", $.text), "{", repeat(choice($.do, $.repeat)), "}"),
-    do: $ => seq("do", field("title", $.quoted_text)),
+    plan: $ => seq("plan", field("name", $.identifier), "{", repeat(choice($.do, $.repeat)), "}"),
+    do: $ => seq("do", field("title", $.string)),
     repeat: $ => seq("repeat", field("count", $.count), "{", repeat1(choice($.do, $.repeat)), "}"),
-    quoted_text: $ => seq('"', /[A-Za-z_][\sA-Za-z0-9_]*/, '"'),
-    text: _ => /[A-Za-z_][\sA-Za-z0-9_]*/,
+    identifier: _ => /[A-Za-z_][A-Za-z0-9_]*/,
+    string: _ => token(/"([^"\\\n]|\\["\\])*"/),
     count: _ => /[0-9]+/
   }
 });

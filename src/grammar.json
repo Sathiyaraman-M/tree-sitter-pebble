@@ -20,10 +20,10 @@
         },
         {
           "type": "FIELD",
-          "name": "title",
+          "name": "name",
           "content": {
             "type": "SYMBOL",
-            "name": "text"
+            "name": "identifier"
           }
         },
         {
@@ -64,7 +64,7 @@
           "name": "title",
           "content": {
             "type": "SYMBOL",
-            "name": "quoted_text"
+            "name": "string"
           }
         }
       ]
@@ -110,26 +110,16 @@
         }
       ]
     },
-    "quoted_text": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "\""
-        },
-        {
-          "type": "PATTERN",
-          "value": "[A-Za-z_][\\sA-Za-z0-9_]*"
-        },
-        {
-          "type": "STRING",
-          "value": "\""
-        }
-      ]
-    },
-    "text": {
+    "identifier": {
       "type": "PATTERN",
-      "value": "[A-Za-z_][\\sA-Za-z0-9_]*"
+      "value": "[A-Za-z_][A-Za-z0-9_]*"
+    },
+    "string": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PATTERN",
+        "value": "\"([^\"\\\\\\n]|\\\\[\"\\\\])*\""
+      }
     },
     "count": {
       "type": "PATTERN",
