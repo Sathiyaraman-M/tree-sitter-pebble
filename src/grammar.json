@@ -64,7 +64,7 @@
           "name": "title",
           "content": {
             "type": "SYMBOL",
-            "name": "text"
+            "name": "quoted_text"
           }
         }
       ]
@@ -110,7 +110,7 @@
         }
       ]
     },
-    "text": {
+    "quoted_text": {
       "type": "SEQ",
       "members": [
         {
@@ -126,6 +126,10 @@
           "value": "\""
         }
       ]
+    },
+    "text": {
+      "type": "PATTERN",
+      "value": "[A-Za-z_][\\sA-Za-z0-9_]*"
     },
     "count": {
       "type": "PATTERN",
