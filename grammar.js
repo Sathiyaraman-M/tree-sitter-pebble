@@ -11,7 +11,9 @@ export default grammar({
   name: "pebble",
 
   rules: {
-    // TODO: add the actual grammar rules
-    source_file: $ => "hello"
+    source_file: $ => seq($.plan),
+    plan: $ => seq("plan", field("title", $.text), "{", repeat(choice($.do)), "}"),
+    do: $ => seq("do", field("title", $.text), ";"),
+    text: $ => seq('"', /[A-Za-z_][\sA-Za-z0-9_]*/, '"'),
   }
 });
