@@ -13,7 +13,7 @@ export default grammar({
   rules: {
     source_file: $ => seq($.plan),
     plan: $ => seq("plan", field("title", $.text), "{", repeat(choice($.do, $.repeat)), "}"),
-    do: $ => seq("do", field("title", $.text), ";"),
+    do: $ => seq("do", field("title", $.text)),
     repeat: $ => seq("repeat", field("count", $.count), "{", repeat1(choice($.do, $.repeat)), "}"),
     text: _ => seq('"', /[A-Za-z_][\sA-Za-z0-9_]*/, '"'),
     count: _ => /[0-9]+/

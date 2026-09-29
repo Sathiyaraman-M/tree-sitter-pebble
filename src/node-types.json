@@ -101,10 +101,6 @@
     "named": false
   },
   {
-    "type": ";",
-    "named": false
-  },
-  {
     "type": "count",
     "named": true
   },
