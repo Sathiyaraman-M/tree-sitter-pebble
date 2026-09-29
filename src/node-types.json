@@ -37,6 +37,40 @@
         {
           "type": "do",
           "named": true
+        },
+        {
+          "type": "repeat",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "repeat",
+    "named": true,
+    "fields": {
+      "count": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "count",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "do",
+          "named": true
+        },
+        {
+          "type": "repeat",
+          "named": true
         }
       ]
     }
@@ -71,11 +105,19 @@
     "named": false
   },
   {
+    "type": "count",
+    "named": true
+  },
+  {
     "type": "do",
     "named": false
   },
   {
     "type": "plan",
+    "named": false
+  },
+  {
+    "type": "repeat",
     "named": false
   },
   {
