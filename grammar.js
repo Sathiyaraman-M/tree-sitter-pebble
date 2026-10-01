@@ -11,7 +11,7 @@ export default grammar({
   name: "pebble",
 
   rules: {
-    source_file: $ => seq($.plan),
+    source_file: $ => repeat($.plan),
     plan: $ => seq("plan", field("name", $.identifier), "{", repeat(choice($.do, $.repeat)), "}"),
     do: $ => seq("do", field("title", $.string)),
     repeat: $ => seq("repeat", field("count", $.count), "{", repeat1(choice($.do, $.repeat)), "}"),

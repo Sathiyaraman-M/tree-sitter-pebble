@@ -33,3 +33,37 @@ plan dummy {
     (repeat (count) (do (string)))
   )
 )
+
+================================================================================
+Multiple plans
+================================================================================
+plan dummy {
+  do "task 1"
+  do "task 2"
+  repeat 2 {
+    do "task 3"
+  }
+}
+
+plan dummy {
+  do "task 1"
+  do "task 2"
+  repeat 2 {
+    do "task 3"
+  }
+}
+--------------------------------------------------------------------------------
+(source_file
+  (plan (identifier)
+    (do (string))
+    (do (string))
+    (repeat (count) (do (string)))
+  )
+
+  (plan (identifier)
+    (do (string))
+    (do (string))
+    (repeat (count) (do (string)))
+  )
+)
+

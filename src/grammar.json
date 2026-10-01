@@ -3,13 +3,11 @@
   "name": "pebble",
   "rules": {
     "source_file": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "plan"
-        }
-      ]
+      "type": "REPEAT",
+      "content": {
+        "type": "SYMBOL",
+        "name": "plan"
+      }
     },
     "plan": {
       "type": "SEQ",
